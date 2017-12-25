@@ -13,7 +13,7 @@ public class StringProblems {
 
 		while (scan.hasNextLine()) {
 
-			System.out.println(equalIsNot(scan.nextLine()));
+			System.out.println(gHappy(scan.nextLine()));
 		}
 	}
 
@@ -41,6 +41,41 @@ public class StringProblems {
 		System.out.println(notCount);
 
 		return isCount == notCount ? true : false;
+	}
+
+	public static boolean gHappy(String str) {
+
+		boolean isGHappy = false;
+		
+		if(str.length() == 1) {
+			
+			return isGHappy;
+			
+		}
+		
+		if(str.isEmpty()) {
+			
+			return true;
+		}
+
+		for (int fromIndex = 0; fromIndex < str.length(); fromIndex++) {
+
+			fromIndex = str.indexOf('g', fromIndex);
+
+			if (fromIndex < 0) {
+				return isGHappy;
+			}
+
+			if ((fromIndex + 1) < str.length() && (str.charAt(fromIndex + 1) == 'g' || (str.charAt(fromIndex - 1) == 'g'))) {
+				isGHappy = true;
+				fromIndex = fromIndex + 1;
+			} else {
+				isGHappy = false;
+			}
+
+		}
+
+		return isGHappy;
 	}
 
 }
