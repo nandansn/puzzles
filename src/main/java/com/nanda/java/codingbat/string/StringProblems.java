@@ -77,5 +77,29 @@ public class StringProblems {
 
 		return isGHappy;
 	}
+	
+	
+	public boolean scoresIncreasing(int[] scores) {
+		  
+		  boolean scoresIncreasing = false;
+		  
+		  for(int i=0; i<scores.length; i++){
+		    if((i+1) < scores.length){
+		  if(scores[i] <= scores[i+1]  ){
+		    
+		    scoresIncreasing = true;
+		    
+		  }else{
+		    scoresIncreasing= false;
+		  }
+		  
+		    } else{
+		      return scoresIncreasing;
+		    }
+		  }
+		  
+		  return scoresIncreasing;
+		}
+
 
 }
